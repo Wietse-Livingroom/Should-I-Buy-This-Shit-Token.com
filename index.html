@@ -12,8 +12,8 @@
     <div class="container text-center pt-4">
       <h1 class="text-center text-danger fw-bold">No!</h1>
       <div class="alert alert-danger mt-2">You should not buy this shit token.</div>
-      <div class="nope-gif">
-          <img id="nope" scr="" height="500px" />
+      <div class="container-fluid">
+          <img id="nope" src="" class="nope-gif" />
       </div>
     </div>
   </body>
@@ -78,5 +78,24 @@
 
     // start the flow
     grab_data();
+
+    // Set mobile flag to gif if Mobile
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        var nope = document.getElementById("nope");
+        nope.classList.add("nope-mobile");
+    }
     </script>
+
+    <!-- Styling -->
+    <style>
+        .nope-gif {
+            height: 500px;
+            max-height: 500px;
+        }
+        .nope-mobile {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </html>
